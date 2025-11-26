@@ -24,22 +24,7 @@ variable "instances" {
 }
 
 resource "null_resource" "this" {
-  count = 1
-
-  lifecycle {
-    action_trigger {
-      events  = [after_create, after_update]
-      actions = [action.bufo_print.success]
-    }
-  }
-
-  triggers = {
-    pet = var.pet
-  }
-}
-
-resource "not_null_resource" "this" {
-  count = 1
+  count = 4
 
   lifecycle {
     action_trigger {
