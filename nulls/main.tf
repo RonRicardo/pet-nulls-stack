@@ -24,7 +24,7 @@ variable "instances" {
 }
 
 resource "null_resource" "this" {
-  count = 3
+  count = 4
 
   lifecycle {
     action_trigger {
@@ -61,13 +61,6 @@ locals {
 }
 
 action "bufo_print" "success" {
-  config {
-    name = local.secret_name
-    color = local.feature_flags.enable_debug
-  }
-}
-
-action "bufo_print" "info" {
   config {
     name = local.secret_name
     color = local.feature_flags.enable_debug
