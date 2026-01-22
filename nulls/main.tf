@@ -67,6 +67,13 @@ action "bufo_print" "success" {
   }
 }
 
+action "bufo_print" "info" {
+  config {
+    name = local.secret_name
+    color = local.feature_flags.enable_debug
+  }
+}
+
 output "ids" {
   value = [for n in null_resource.this : n.id]
 }
