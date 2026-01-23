@@ -63,7 +63,6 @@ locals {
 action "bufo_print" "success" {
   config {
     name = local.secret_name
-    color = local.feature_flags.enable_debug
   }
 }
 
