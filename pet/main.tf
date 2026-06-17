@@ -15,7 +15,6 @@ variable "prefix" {
 }
 
 resource "random_pet" "this" {
-  count = 1
   prefix = var.prefix
   length = 3
 }
